@@ -198,4 +198,4 @@ class test {
 
 //app.listen(port, () => {console.log(`Server is running on port ${port}`)}) //Denne setter i gang listening to server
 
-module.exports.handler= app
+module.exports = app
