@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "server for tom and vero",
   "main": "Index.js",
+  "engines":{
+    "node":"14.X"
+  },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
     "@vercel/node": "^2.2.0",
@@ -72,7 +75,7 @@
     "vary": "^1.1.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node Index.js"
   },
   "author": "Tom-Elbin Bendheim",
   "license": "ISC"
