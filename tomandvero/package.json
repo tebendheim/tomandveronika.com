@@ -27,7 +27,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"server": "cd ../tomandvero-server && nodemon index.js",
+		"server": "cd ../tomandvero-server/api && nodemon index.js",
 		"dev": "concurrently \"npm run start\"  \"npm run server\""
 	},
 	"eslintConfig": {
