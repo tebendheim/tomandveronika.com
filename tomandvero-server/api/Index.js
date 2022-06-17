@@ -149,7 +149,9 @@ app.post('/api/youtube/testing', async(req, res) => {
   }
 })
 
-
+app.get('/', (req,res)=>{
+  res.json{'du er inne på siden':'nå'}
+})
 
 // Denne bruker jeg.
 app.get('/api/youtube', async(req, res) => {
