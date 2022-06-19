@@ -32,10 +32,14 @@ class Contact extends React.Component {
 		});
 		const captchaToken = await this.reRef.current.executeAsync();
 		this.reRef.current.reset();
-		const url = 'http://localhost:5001/api/sendgrid';
+		const url = 'https://creative-daffodil-4335b5.netlify.app/api/sendgrid';
+
+		/*const url =
+			'https://tomandveronika-server-9la7d4sfp-tebendheim.vercel.app/api/sendgrid'; //*/
 		const params = {
 			headers: {
 				'content-type': 'application/JSON',
+				'Access-Control-Allow-Origin': 'vercel.app',
 			},
 			data: {
 				firstName: this.state.firstName,
@@ -79,7 +83,7 @@ class Contact extends React.Component {
 		return (
 			<section className='section' id='contact'>
 				<h1 className='header'>Contact us</h1>
-				<form onSubmit={this.handleSubmit}>
+				<form className={Style.form} onSubmit={this.handleSubmit}>
 					<ReCAPTCHA
 						sitekey={process.env.REACT_APP_REC_SITE_KEY}
 						size='invisible'

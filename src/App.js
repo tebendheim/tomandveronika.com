@@ -5,14 +5,14 @@ import About from './Components/About';
 import Videos from './Components/Videos';
 import Contact from './Components/Contact';
 import Footer from './Components/Footer';
+import Home from './Components/Home';
 
 function App() {
 	return (
 		<div className='App'>
-			<header className='App-header'>
-				<Navbar />
-			</header>
 			<main>
+				<Navbar />
+				<Home id={'home'} />
 				<About id={'about'} />
 				<Videos id={'videos'} />
 				<Contact id={'contact'} />

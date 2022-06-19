@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import styles from './CSS/Videos.module.css';
+import axios from 'axios';
 
 require('dotenv').config();
 
@@ -14,16 +15,21 @@ class Videos extends React.Component {
 			test: 'dette er en test',
 			direct: '',
 			playersReady: false,
+			ip: '',
 		};
 		this.getProps = this.getProps.bind(this);
 		//this.postGetProps = this.postGetprops.bind(this);
+
+		this.findIP = this.findIP.bind(this);
 	}
 
-	async getProps() {
-		const url = 'http://localhost:5001/api/youtube';
+	async getProps(ipadress) {
+		const url = 'https://creative-daffodil-4335b5.netlify.app/api/youtube';
 		const params = {
 			headers: {
 				maxResults: 10,
+				'X-Forwarded-For': ipadress,
+				'Access-Control-Allow-Origin': '*',
 			},
 		};
 		return await Axios.get(url, params)
@@ -31,6 +37,7 @@ class Videos extends React.Component {
 				this.setState({
 					testData: result.data,
 				});
+				console.log(result);
 				return result;
 			})
 			.catch((err) => {
@@ -39,7 +46,23 @@ class Videos extends React.Component {
 			});
 	}
 
+	async findIP() {
+		await axios
+			.get('https://geolocation-db.com/json/')
+			.then((res) => {
+				this.setState({
+					ip: res.data.IPv4,
+				});
+				console.log(res.data.IPv4);
+				return res.data.IPv4;
+			})
+			.catch((err) => {
+				return err;
+			});
+	}
+
 	async componentDidMount(event) {
+		await this.findIP();
 		console.log('mounted');
 		/*const props = */ await this.getProps();
 	}

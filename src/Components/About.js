@@ -3,7 +3,7 @@ import AboutText from './AboutText';
 
 const About = () => {
 	return (
-		<section className='section' id={'about'} aria-labelledby={'about'}>
+		<section className='section about' id={'about'} aria-labelledby={'about'}>
 			<AboutText />
 		</section>
 	);
