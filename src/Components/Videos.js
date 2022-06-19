@@ -83,7 +83,7 @@ class Videos extends React.Component {
 									<p>
 										<iframe
 											title={title}
-											src={`http://www.youtube.com/embed/${resourceId.videoId}`}
+											src={`https://www.youtube-nocookie.com/embed/${resourceId.videoId}`}
 											frameBorder='0'
 											allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
 											allowFullScreen
