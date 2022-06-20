@@ -1,5 +1,6 @@
 [Build]
   Command='npm install && npm run build'
+  base='/*'
 
 [[Redirects]]
   From = '/*'
