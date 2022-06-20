@@ -1,5 +1,5 @@
 
 [[Redirects]]
   From = '/*'
-  To = '/index.html'
+  To = '/public/index.html'
   status = 200
