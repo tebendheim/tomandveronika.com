@@ -1,8 +1,0 @@
-[Build]
-  Command='npm install && npm run build'
-  base='/*'
-
-[[Redirects]]
-  From = '/*'
-  To = '/public/index.html'
-  status = 200
