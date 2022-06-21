@@ -102,15 +102,3 @@ class Videos extends React.Component {
 }
 
 export default Videos;
-
-/*										<iframe
-											title={title}
-											src={`https://www.youtube-nocookie.com/embed/${resourceId.videoId}&origin=netlify.app`}
-											//src={`http://localhost:8888/api/test?urlTo=https://www.youtube-nocookie.com/embed/${resourceId.videoId}`}
-											frameBorder='0'
-											allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-											allowFullScreen
-											className={styles.frame}
-										></iframe>
-
-										*/
