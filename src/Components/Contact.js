@@ -32,10 +32,10 @@ class Contact extends React.Component {
 		});
 		const captchaToken = await this.reRef.current.executeAsync();
 		this.reRef.current.reset();
-		const url = 'https://creative-daffodil-4335b5.netlify.app/api/sendgrid';
+		const url =
+			'https://main--creative-daffodil-4335b5.netlify.app/api/sendinblue';
 
-		/*const url =
-			'https://tomandveronika-server-9la7d4sfp-tebendheim.vercel.app/api/sendgrid'; //*/
+		//const url = 'http://localhost:8888/api/sendinblue'; //*/
 		const params = {
 			headers: {
 				'content-type': 'application/JSON',
