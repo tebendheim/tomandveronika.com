@@ -1,0 +1,16 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Oslo",
+			"country": {
+				"code": "NO",
+				"name": "Norway"
+			},
+			"subdivision": {
+				"code": "03",
+				"name": "Oslo County"
+			}
+		},
+		"timestamp": 1655837397633
+	}
+}
