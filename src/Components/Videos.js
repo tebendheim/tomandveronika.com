@@ -82,13 +82,13 @@ class Videos extends React.Component {
 								<li key={item.id} className={styles.card}>
 									<p>
 										<iframe
-											title={title}
-											src={`https://www.youtube-nocookie.com/embed/${resourceId.videoId}&origin=netlify.app`}
-											//src={`http://localhost:8888/api/test?urlTo=https://www.youtube-nocookie.com/embed/${resourceId.videoId}`}
+											className='lazy'
+											allowFullScreen='1'
+											allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											src={`https://www.youtube.com/embed/${resourceId.videoId}?origin=https://tomandveronika.com&showinfo=0&video-id=${resourceId.videoId}&enablejsapi=1&widgetid=1&color=white&modestbranding=1&rel=0`}
+											data-title='video_title'
+											title='video_title'
 											frameBorder='0'
-											allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-											allowFullScreen
-											className={styles.frame}
 										></iframe>
 									</p>
 									<h3>{title}</h3>
@@ -102,3 +102,15 @@ class Videos extends React.Component {
 }
 
 export default Videos;
+
+/*										<iframe
+											title={title}
+											src={`https://www.youtube-nocookie.com/embed/${resourceId.videoId}&origin=netlify.app`}
+											//src={`http://localhost:8888/api/test?urlTo=https://www.youtube-nocookie.com/embed/${resourceId.videoId}`}
+											frameBorder='0'
+											allow='accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+											allowFullScreen
+											className={styles.frame}
+										></iframe>
+
+										*/
