@@ -1,6 +1,10 @@
 * {
 	box-sizing: border-box;
 }
+* {
+	margin: 0;
+	padding: 0;
+}
 .grid {
 	display: flex;
 	align-items: center;
@@ -41,8 +45,7 @@
 	object-fit: cover;
 	margin: auto;
 }
-#videos {
-}
+
 .headers {
 	text-align: center;
 	padding-bottom: 0;

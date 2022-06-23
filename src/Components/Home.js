@@ -10,7 +10,12 @@ class Home extends React.Component {
 	}
 	render() {
 		return (
-			<section className='section'>
+			<section
+				name='home'
+				className='section home'
+				id={'home'}
+				aria-labelledby={'home'}
+			>
 				<div className={styles.wrapper}>
 					<img
 						href='/home'

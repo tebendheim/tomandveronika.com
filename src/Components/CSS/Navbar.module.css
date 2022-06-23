@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+	font-family: 'Montserrat';
+}
 .navWrapper {
 	position: sticky;
 	top: 0;
@@ -9,29 +12,30 @@
 	height: 50px;
 	background-color: #171511;
 	display: flex;
-	justify-content: space-between;
 }
 .wrapLogo {
-	width: calc(50% / 4);
+	width: 50%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
+	margin: 0 0 0 2%;
 }
 .logo {
 	height: 50px;
 	width: 50px;
 	cursor: pointer;
 	background-color: #171511;
-	margin: auto;
 }
 .menuObjects {
 	display: flex;
 	justify-content: flex-end;
 	width: 50%;
+	height: 50px;
+	margin-right: 2%;
 }
 
 .navElement {
 	display: flex;
-	margin: auto;
+	margin: auto 0 auto auto;
 }
 .navElement:hover {
 	text-decoration: underline;
@@ -68,6 +72,23 @@
 	text-decoration: underline;
 	font-family: inherit;
 }
+
+.buttonWrapper {
+	background-color: transparent;
+	border: 0;
+	color: #ffff;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	-webkit-clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	position: absolute;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0;
+	margin: -1px;
+}
 .toggleButton {
 	background-color: transparent;
 	border: 0;
@@ -85,14 +106,10 @@
 	margin: -1px;
 }
 @media (max-width: 650px) {
-	.toggleButton {
-		all: unset;
-		width: 50px;
-		height: 100%;
-		background-color: transparent;
-		border: 0;
-		color: #ffff;
-		border: 0;
+	* {
+	}
+	.atag {
+		font-size: 20px;
 	}
 	.menuObjects {
 		background-color: transparent;
@@ -109,5 +126,66 @@
 		white-space: nowrap;
 		padding: 0;
 		margin: -1px;
+		z-index: -10;
+		transition: height 2s;
+	}
+	.buttonWrapper {
+		all: unset;
+		width: 50%;
+		margin-right: 2%;
+	}
+	.hideLogo {
+		width: 50%;
+		display: flex;
+		justify-content: flex-start;
+		margin: 0 0 0 2%;
+	}
+	.toggleButton {
+		all: unset;
+		width: 50px;
+		height: wrap;
+		float: right;
+		background-color: transparent;
+		border: 0;
+		color: #ffff;
+		float: right;
+		display: flex;
+		justify-content: right;
+		font-size: 20px;
+	}
+	.navWrapperActive {
+		position: sticky;
+		top: 0;
+		align-items: center;
+		position: -webkit-sticky;
+		width: 100%;
+		height: 50px;
+		background-color: #171511;
+		display: flex;
+	}
+	.menuObjectsActive {
+		position: fixed;
+		top: 50px;
+		width: 40%;
+		left: 60%;
+		height: 100%;
+		background-color: #171511;
+		transition: height 1s ease-in-out;
+		padding-top: 10%;
+	}
+	.navElement {
+		margin: auto;
+		width: 50%;
+		display: flex;
+		margin-bottom: 50%;
+	}
+	.atag {
+		margin: auto;
+	}
+
+	.toggleActive {
+		position: relative;
+		display: block;
+		font-size: 20px;
 	}
 }

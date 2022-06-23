@@ -23,6 +23,9 @@ const Navbar = () => {
 			setDropdown(!dropdown);
 		}
 	}; */
+	const falseClick = () => {
+		setClick(false);
+	};
 
 	const [height, setHeight] = useState(window.innerWidth);
 	const [width, setWidth] = useState(window.innerHeight);
@@ -52,53 +55,61 @@ const Navbar = () => {
 	});*/
 
 	return (
-		<header className={style.navWrapper} id='home'>
-			<div className={style.wrapLogo}>
-				<img
-					href='/home'
-					className={style.logo}
-					src={logo}
-					alt='logo'
-					id='logo'
-				></img>
+		<header
+			className={click ? style.navWrapperActive : style.navWrapper}
+			id='home'
+		>
+			<div className={click ? style.hideLogo : style.wrapLogo}>
+				<a href='#'>
+					<img className={style.logo} src={logo} alt='logo' id='logo'></img>
+				</a>
 			</div>
 			<ul className={click ? style.menuObjectsActive : style.menuObjects}>
 				<li className={style.navElement}>
-					<a className={style.atag} href='#home'>
+					<a onClick={falseClick} className={style.atag} href='#'>
 						Home
 					</a>
 				</li>
 				<li className={style.navElement}>
-					<a className={style.atag} href='#about'>
+					<a onClick={falseClick} className={style.atag} href='#about'>
 						About
 					</a>
 				</li>
 				<li className={style.navElement}>
-					<a className={style.atag} href='#videos'>
+					<a onClick={falseClick} className={style.atag} href='#videos'>
 						Videos
 					</a>
 				</li>
 				<li className={`${style.navElement}`}>
-					<button className={`${style.navContact}`}>
-						<a className={`${style.atag} ${style.abutton}`} href='#contact'>
+					<button
+						onClick={falseClick}
+						className={`${style.navContact}`}
+						href='#contact'
+					>
+						<a
+							onClick={falseClick}
+							className={`${style.atag} ${style.abutton}`}
+							href='#contact'
+						>
 							Contact
 						</a>
 					</button>
 				</li>
 			</ul>
-
-			<button
-				className={style.toggleButton}
-				onClick={handleClick}
-				type='button'
-				aria-label='toggle-navigation'
-			>
-				{click ? (
-					<i className='fas fa-times'></i>
-				) : (
-					<i className='fas fa-bars'></i>
-				)}
-			</button>
+			<div className={style.buttonWrapper}>
+				<button
+					className={style.toggleButton}
+					onClick={handleClick}
+					type='button'
+					aria-label='toggle-navigation'
+				>
+					{click ? (
+						<i className='fas fa-times'></i>
+					) : (
+						<i className='fas fa-bars'></i>
+					)}
+				</button>
+			</div>
 		</header>
 	);
 };
