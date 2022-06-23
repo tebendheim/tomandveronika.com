@@ -8,3 +8,16 @@
 .form {
 	height: 100%;
 }
+#contact {
+	margin-top: 10%;
+}
+.sectionC {
+	padding-top: 100px;
+}
+.line {
+	width: 95%;
+	height: 1px;
+	margin: auto;
+	background-color: black;
+	margin-bottom: 20px;
+}
