@@ -5,6 +5,22 @@
 	margin: 0;
 	padding: 0;
 }
+.hide {
+	background-color: transparent;
+	border: 0;
+	color: #ffff;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	-webkit-clip-path: inset(50%);
+	height: 1px;
+	width: 1px;
+	position: absolute;
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0;
+	margin: -1px;
+}
 .videos_section {
 }
 .grid {
@@ -19,7 +35,7 @@
 	padding: 0;
 	margin-left: 0;
 	height: 100%;
-	overflow: scroll;
+	overflow: visible;
 	padding-bottom: 10%;
 }
 

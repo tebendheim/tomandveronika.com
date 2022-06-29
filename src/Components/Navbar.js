@@ -4,25 +4,10 @@ import style from './CSS/Navbar.module.css';
 
 const Navbar = () => {
 	const [click, setClick] = useState(false);
-	const [dropdown, setDropdown] = useState(false);
 	const handleClick = () => {
 		setClick(!click);
 	};
-	/*   //Trenger senere?
-	const closeMobileMenu = () => setClick(false);
 
-	const onMouseEnter = () => {
-		setDropdown(true);
-	};
-	const onMouseLeave = () => {
-		setDropdown(false);
-	};
-
-	const onMouseClick = () => {
-		if (window.innerWidth < 960) {
-			setDropdown(!dropdown);
-		}
-	}; */
 	const falseClick = () => {
 		setClick(false);
 	};
@@ -66,17 +51,17 @@ const Navbar = () => {
 			</div>
 			<ul className={click ? style.menuObjectsActive : style.menuObjects}>
 				<li className={style.navElement}>
-					<a onClick={falseClick} className={style.atag} href='#'>
+					<a onClick={falseClick} className={style.atag} href='/'>
 						Home
 					</a>
 				</li>
 				<li className={style.navElement}>
-					<a onClick={falseClick} className={style.atag} href='#about'>
+					<a onClick={falseClick} className={style.atag} href='/about'>
 						About
 					</a>
 				</li>
 				<li className={style.navElement}>
-					<a onClick={falseClick} className={style.atag} href='#videos'>
+					<a onClick={falseClick} className={style.atag} href='/videos'>
 						Videos
 					</a>
 				</li>
@@ -84,12 +69,12 @@ const Navbar = () => {
 					<button
 						onClick={falseClick}
 						className={`${style.navContact}`}
-						href='#contact'
+						href='/contact'
 					>
 						<a
 							onClick={falseClick}
 							className={`${style.atag} ${style.abutton}`}
-							href='#contact'
+							href='/contact'
 						>
 							Contact
 						</a>

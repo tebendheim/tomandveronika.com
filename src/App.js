@@ -1,25 +1,26 @@
 import React from 'react';
-import reactDOM from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Navbar from './Components/Navbar';
-import About from './Components/About';
-import Videos from './Components/Videos';
-import Contact from './Components/Contact';
-import Footer from './Components/Footer';
-import Home from './Components/Home';
+import Layout from './Components/Layout';
+import About from './Pages/About';
+import Home from './Pages/Home';
+import Contact from './Pages/Contact';
+import Videos from './Pages/Videos';
+import { NoPage } from './Pages/NoPage';
 
 function App() {
 	return (
-		<div className='App'>
-			<main>
-				<Navbar />
-				<Home id={'home'} />
-				<About id={'about'} />
-				<Videos id={'videos'} />
-				<Contact id={'contact'} />
-			</main>
-			<Footer />
-		</div>
+		<BrowserRouter>
+			<Routes>
+				<Route path='/' element={<Layout />}>
+					<Route index element={<Home />} />
+					<Route path='about' element={<About />} />
+					<Route path='contact' element={<Contact />} />
+					<Route path='Videos' element={<Videos />} />
+					<Route path='*' element={<NoPage />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
