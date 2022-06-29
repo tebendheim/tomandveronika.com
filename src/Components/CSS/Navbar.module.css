@@ -106,8 +106,6 @@
 	margin: -1px;
 }
 @media (max-width: 650px) {
-	* {
-	}
 	.atag {
 		font-size: 20px;
 	}
@@ -152,6 +150,9 @@
 		display: flex;
 		justify-content: right;
 		font-size: 20px;
+	}
+	.navWrapper {
+		width: 100%;
 	}
 	.navWrapperActive {
 		position: sticky;
