@@ -69,8 +69,8 @@ class Videos extends React.Component {
 
 	render() {
 		return (
-			<section className='section' id='videos'>
-				<h1 className={styles.headers}>Dette er video seksjonen</h1>
+			<section className={`section ${styles.videos_section}`} id='videos'>
+				<h1 className={styles.headers}>Videos</h1>
 				<h2>{this.state.data}</h2>
 				<ul className={styles.grid}>
 					{this.state.testData &&

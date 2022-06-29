@@ -5,6 +5,8 @@
 	margin: 0;
 	padding: 0;
 }
+.videos_section {
+}
 .grid {
 	display: flex;
 	align-items: center;
@@ -12,7 +14,7 @@
 	flex-wrap: wrap;
 	max-width: 1500px;
 	margin: auto;
-	margin-top: 3rem;
+	padding-top: 1rem;
 	list-style: none;
 	padding: 0;
 	margin-left: 0;
@@ -53,4 +55,5 @@
 	text-align: center;
 	padding-bottom: 0;
 	margin-bottom: 0;
+	padding-bottom: 2rem;
 }

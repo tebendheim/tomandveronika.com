@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './CSS/Home.module.css';
-import logo from './Pictures/Logo_Ideer(white).png';
+import logo from './Pictures/Logo_Ideer2.png';
 class Home extends React.Component {
 	constructor(props) {
 		super(props);
@@ -12,7 +12,7 @@ class Home extends React.Component {
 		return (
 			<section
 				name='home'
-				className='section home'
+				className={`section ${styles.section_home}`}
 				id={'home'}
 				aria-labelledby={'home'}
 			>
@@ -23,8 +23,10 @@ class Home extends React.Component {
 						src={logo}
 						alt='logo'
 						id='logo'
-					></img>
-					<h1 className={styles.header}>tomadveronika.com</h1>
+					>
+						
+					</img>
+					<h1 className={styles.header}>tomandveronika.com</h1>
 				</div>
 			</section>
 		);

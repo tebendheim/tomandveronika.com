@@ -83,7 +83,7 @@ class Contact extends React.Component {
 		return (
 			<section className={`section ${Style.sectionC}`} id='contact'>
 				<div className={Style.line}></div>
-				<h1 className='header'>Contact us</h1>
+				<h1 className={`header ${Style.headliner}`}>Contact us</h1>
 				<form className={Style.form} onSubmit={this.handleSubmit}>
 					<ReCAPTCHA
 						sitekey={process.env.REACT_APP_REC_SITE_KEY}
@@ -97,7 +97,7 @@ class Contact extends React.Component {
 									'Contact form is sendt. You wil get a confirmation email on youre given email'
 								}
 							</p>
-							<fieldset>
+							<fieldset className={Style.fieldset}>
 								<p>Add another form?</p>
 								<button onClick={this.handleNewForm}>New Form</button>
 							</fieldset>
@@ -107,17 +107,18 @@ class Contact extends React.Component {
 							<p>
 								{'An error occured. please refresh youre browser and try again'}
 							</p>
-							<fieldset>
+							<fieldset className={Style.fieldset}>
 								<p>Add another form?</p>
 								<button onClick={this.handleNewForm}>New Form</button>
 							</fieldset>
 						</div>
 					) : (
 						<div className='container'>
-							<fieldset>
-								<label>
-									First Name
+							<fieldset className={`${Style.fieldset} ${Style.fieldsetone}`}>
+								<label className={Style.label}>
+									First Name:
 									<input
+										className={`${Style.input} ${Style.firstName}`}
 										type='text'
 										value={this.state.firstName}
 										name='firstName'
@@ -125,9 +126,10 @@ class Contact extends React.Component {
 										ref={(ref) => (this.input = ref)}
 									/>
 								</label>
-								<label>
-									Last name
+								<label className={Style.label}>
+									Last name:
 									<input
+										className={`${Style.input} ${Style.lastName}`}
 										type='text'
 										value={this.state.lastName}
 										name='lastName'
@@ -135,9 +137,10 @@ class Contact extends React.Component {
 										ref={(ref) => (this.input = ref)}
 									/>
 								</label>
-								<label>
-									Email
+								<label className={Style.label}>
+									Email:
 									<input
+										className={`${Style.input} ${Style.email}`}
 										type='email'
 										value={this.state.email}
 										name='email'
@@ -146,9 +149,11 @@ class Contact extends React.Component {
 									/>
 								</label>
 							</fieldset>
-							<fieldset>
-								<label>
+							<fieldset className={Style.fieldset}>
+								<label className={Style.label}>
+									Message:
 									<textarea
+										className={`${Style.input} ${Style.message}`}
 										type='text'
 										value={this.state.message}
 										name='message'
@@ -156,9 +161,13 @@ class Contact extends React.Component {
 									/>
 								</label>
 							</fieldset>
-							<fieldset>
-								<label>
-									<input type='submit' value='submit' />
+							<fieldset className={`${Style.fieldset} ${Style.submitfield}`}>
+								<label className={`${Style.label} ${Style.submitLabel}`}>
+									<input
+										className={`${Style.input} ${Style.submit}`}
+										type='submit'
+										value='Submit'
+									/>
 								</label>
 							</fieldset>
 						</div>
