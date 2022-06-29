@@ -30,7 +30,7 @@
 	justify-content: flex-end;
 	width: 50%;
 	height: 50px;
-	padding-right: 2%;
+	margin-right: 2%; /*Byttet denne til padding*/
 }
 
 .navElement {
