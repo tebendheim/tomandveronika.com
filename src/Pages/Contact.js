@@ -82,7 +82,6 @@ class Contact extends React.Component {
 	render() {
 		return (
 			<section className={`section ${Style.sectionC}`} id='contact'>
-				<div className={Style.line}></div>
 				<h1 className={`header ${Style.headliner}`}>Contact us</h1>
 				<form className={Style.form} onSubmit={this.handleSubmit}>
 					<ReCAPTCHA
