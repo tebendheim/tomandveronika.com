@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gelano+Grotesque+alt&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Rasa&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Barlow&display=swap');
 * {
 	margin: 0;
 	padding: 0;
-	font-family: 'Rasa', sans-serif;
-	font-weight: lighter;
-	font-size: 25px;
+	font-family: 'Gelano Grotesque Alt', sans-serif;
+	font-weight: 100;
+	font-size: 22px;
+	line-height: 40px;
 }
 .header {
 	font-family: 'Barlow Condensed';
@@ -27,8 +28,16 @@ body {
 }
 
 .section {
-	height: 95vh;
 	margin: auto;
 	padding-top: 60px;
 	width: 100%;
+}
+
+@media (max-width: 650px) {
+	* {
+		font-size: 18px;
+	}
+	header {
+		font-size: 35px;
+	}
 }

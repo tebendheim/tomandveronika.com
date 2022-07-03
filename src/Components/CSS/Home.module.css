@@ -3,24 +3,33 @@
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
+	display: flex;
+	flex-direction: column;
 }
 .logo {
 	height: auto;
 	width: auto;
 	max-width: 100%;
-	max-height: 90%;
+	max-height: 100%;
 }
 .wrapper {
 	margin: auto;
 	height: 100%;
-	width: 80%;
-	display: flex;
+	width: 65%;
 	margin: auto;
-	flex-wrap: wrap;
-	display: flex;
-	justify-content: center;
-	object-fit: cover;
+	display: block;
+}
+.logoWrapper {
+	width: 100%;
+	margin: 0;
 }
 .header {
 	margin: auto;
+	margin-top: 2%;
+	text-align: center;
+}
+@media (max-width: 650) {
+	.header {
+		font-size: 18px;
+	}
 }

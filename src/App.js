@@ -17,6 +17,11 @@ function App() {
 					<Route path='about' element={<About />} />
 					<Route path='contact' element={<Contact />} />
 					<Route path='Videos' element={<Videos />} />
+					<Route path='login' element={<NoPage />} />
+					<Route path='blog' element={<NoPage />} />
+					<Route path='editblog' element={<NoPage />} />
+					<Route path='services' element={<NoPage />} />
+					<Route path='signup' element={<NoPage />} />
 					<Route path='*' element={<NoPage />} />
 				</Route>
 			</Routes>

@@ -17,13 +17,15 @@ class Home extends React.Component {
 				aria-labelledby={'home'}
 			>
 				<div className={styles.wrapper}>
-					<img
-						href='/home'
-						className={styles.logo}
-						src={logo}
-						alt='logo'
-						id='logo'
-					></img>
+					<div className={styles.logoWrapper}>
+						<img
+							href='/home'
+							className={styles.logo}
+							src={logo}
+							alt='logo'
+							id='logo'
+						></img>
+					</div>
 					<h1 className={`header ${styles.header}`}>tomandveronika.com</h1>
 				</div>
 			</section>
