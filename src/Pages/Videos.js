@@ -73,9 +73,8 @@ class Videos extends React.Component {
 	render() {
 		return (
 			<section className={`section ${styles.videos_section}`} id='videos'>
-				<h1 className={styles.headers}>Videos</h1>
-				<h1>{this.state.isLoading}</h1>
-				<h3>{this.state.isLoading ? 'isLoading' : 'Is not loading'}</h3>
+				<h1 className={`header ${styles.headers}`}>Videos</h1>
+				<h3>{this.state.isLoading && <Spinner />}</h3>
 				<ul className={styles.grid}>
 					{this.state.Data &&
 						this.state.Data.items.map((item, index) => {

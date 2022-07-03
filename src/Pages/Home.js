@@ -24,7 +24,7 @@ class Home extends React.Component {
 						alt='logo'
 						id='logo'
 					></img>
-					<h1 className={styles.header}>tomandveronika.com</h1>
+					<h1 className={`header ${styles.header}`}>tomandveronika.com</h1>
 				</div>
 			</section>
 		);

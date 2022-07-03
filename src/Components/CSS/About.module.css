@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+
+.header {
+	text-align: center;
+}
+
+.about {
+	display: flex;
+	flex-direction: column;
+}
+.aboutText {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 7.5% 0 7.5%;
+}
+.aboutText img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	display: flex;
+	align-content: center;
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+.aboutText > h2 {
+	font-size: 30px;
+	font-family: 'Barlow Condensed';
+	text-transform: uppercase;
+	font-weight: 200;
+	text-decoration: underline solid #d9e3da;
+	text-align: center;
+}
+.aboutText > h2 {
+	margin-top: 35px;
+}
+.aboutText > p {
+	text-align: center;
+}
