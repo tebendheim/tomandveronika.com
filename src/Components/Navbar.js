@@ -44,7 +44,7 @@ const Navbar = () => {
 			className={click ? style.navWrapperActive : style.navWrapper}
 			id='home'
 		>
-			<div className={click ? style.hideLogo : style.wrapLogo}>
+			<div className={click ? style.wrapLogo : style.wrapLogo}>
 				<a href='/'>
 					<img className={style.logo} src={logo} alt='logo' id='logo'></img>
 				</a>
