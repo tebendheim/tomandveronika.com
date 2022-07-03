@@ -94,7 +94,7 @@ class Contact extends React.Component {
 						<div>
 							<p>
 								{
-									'Contact form is sendt. You wil get a confirmation email on youre given email'
+									'Contact form is sent. Please check your email for confirmation.'
 								}
 							</p>
 							<fieldset className={Style.fieldset}>
@@ -105,7 +105,7 @@ class Contact extends React.Component {
 					) : this.state.result === 'error' ? (
 						<div>
 							<p>
-								{'An error occured. please refresh youre browser and try again'}
+								{'An error occured. Please refresh your browser and try again'}
 							</p>
 							<fieldset className={Style.fieldset}>
 								<p>Add another form?</p>
