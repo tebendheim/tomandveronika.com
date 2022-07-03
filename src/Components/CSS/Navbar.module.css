@@ -50,6 +50,7 @@
 	text-decoration: none;
 	cursor: pointer;
 	font-family: 'Barlow Condensed';
+	font-size: 22px;
 }
 .abutton {
 	color: #ffff;
@@ -68,11 +69,8 @@
 	list-style: none;
 	font-family: 'Barlow Condensed';
 }
-.navContact:hover {
-	background-color: #291d1d;
-}
+
 .navContact:hover > .abutton {
-	background-color: #291d1d;
 	color: #ffff;
 	text-decoration: underline;
 }
@@ -108,6 +106,9 @@
 	white-space: nowrap;
 	padding: 0;
 	margin: -1px;
+}
+.linkActive {
+	border-bottom: 10px solid red;
 }
 @media (max-width: 650px) {
 	.atag {
@@ -195,7 +196,6 @@
 	.toggleActive {
 		position: relative;
 		display: block;
-		font-size: 20px;
 	}
 }
 @media (max-width: 400px) {

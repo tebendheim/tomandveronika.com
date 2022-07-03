@@ -37,7 +37,10 @@ body {
 	* {
 		font-size: 18px;
 	}
-	header {
+	.header {
 		font-size: 35px;
 	}
+}
+@media (max-width:450){
+
 }
