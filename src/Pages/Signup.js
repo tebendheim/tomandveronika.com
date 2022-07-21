@@ -21,11 +21,12 @@ class Signup extends React.Component {
 			[event.target.name]: event.target.value,
 		});
 	}
+	//mangler en handlesubmit.
 	render() {
 		return (
 			<section className={`section ${Style.sectionC}`} id='contact'>
-				<h1 className={`header ${Style.headliner}`}>Contact us</h1>
-				<form>
+				<h1 className={`header ${Style.headliner}`}>Sign up</h1>
+				<form className={Style.form} onSubmit={this.handleSubmit}>
 					<fieldset className={`${Style.fieldset} ${Style.fieldsetone}`}>
 						<label className={Style.label}>
 							First Name:

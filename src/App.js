@@ -8,6 +8,8 @@ import Contact from './Pages/Contact';
 import Videos from './Pages/Videos';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
+import Forgotpassword from './Pages/Forgotpassword';
+import Reset from './Pages/Reset';
 import { NoPage } from './Pages/NoPage';
 
 function App() {
@@ -25,6 +27,10 @@ function App() {
 					<Route path='services' element={<NoPage />} />
 					<Route path='signup' element={<Signup />} />
 					<Route path='*' element={<NoPage />} />
+					<Route path='forgotpassword'>
+						<Route index element={<Forgotpassword />} />
+						<Route path='reset/:token' element={<Reset />} />
+					</Route>
 				</Route>
 			</Routes>
 		</BrowserRouter>
