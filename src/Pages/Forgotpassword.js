@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Style from '../Components/CSS/Contact.module.css';
 import ReCAPTCHA from 'react-google-recaptcha';
 import axios from 'axios';
+require('dotenv').config();
 
 function Forgotpassword(props) {
 	const [state, setState] = useState({
@@ -21,8 +22,8 @@ function Forgotpassword(props) {
 		const captchaToken = await reRef.current.executeAsync();
 		reRef.current.reset();
 		const url =
-			'https://main--creative-daffodil-4335b5.netlify.app/api/login/forgotpassword';
-		const testurl = 'http://localhost:8888/api/login/forgotpassword';
+			'https://main--creative-daffodil-4335b5.netlify.app/api/forgotpassword';
+		const testurl = 'http://localhost:8888/api/forgotpassword';
 		const params = {
 			headers: {
 				'content-type': 'application/JSON',
@@ -33,10 +34,11 @@ function Forgotpassword(props) {
 				token: captchaToken,
 			},
 		};
-		console.log(state.email);
 		try {
-			const res = await axios.post(url, params);
+			const res = await axios.post(testurl, params);
 			console.log(res.status);
+			console.log(res.data);
+			console.log(res);
 			if (res.status === 200) {
 				setState({ ...state, result: 'success' });
 				return res.status;
