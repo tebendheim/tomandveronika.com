@@ -22,7 +22,7 @@ function Forgotpassword(props) {
 		reRef.current.reset();
 		const url =
 			'https://main--creative-daffodil-4335b5.netlify.app/api/login/forgotpassword';
-		//const testurl = 'http://localhost:8888/api/login/forgotpassword';
+		const testurl = 'http://localhost:8888/api/login/forgotpassword';
 		const params = {
 			headers: {
 				'content-type': 'application/JSON',
@@ -35,7 +35,7 @@ function Forgotpassword(props) {
 		};
 		console.log(state.email);
 		try {
-			const res = await axios.post(url, params);
+			const res = await axios.post(testurl, params);
 			console.log(res.status);
 			if (res.status === 200) {
 				setState({ ...state, result: 'success' });
