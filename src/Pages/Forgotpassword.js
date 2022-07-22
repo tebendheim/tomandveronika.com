@@ -26,7 +26,7 @@ function Forgotpassword(props) {
 		const testurl = 'http://localhost:8888/api/forgotpassword';
 		const params = {
 			headers: {
-				'content-type': 'text/plain',
+				'content-type': 'application/JSON',
 				'Access-Control-Allow-Origin': '*',
 			},
 			data: {
