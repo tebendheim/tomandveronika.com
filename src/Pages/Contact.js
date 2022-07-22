@@ -32,8 +32,7 @@ class Contact extends React.Component {
 		});
 		const captchaToken = await this.reRef.current.executeAsync();
 		this.reRef.current.reset();
-			const url =
-			'https://main--creative-daffodil-4335b5.netlify.app/api/sendinblue';//*/
+		const url = 'https://api.tomandveronika.com/api/sendinblue'; //*/
 
 		//const url = 'http://localhost:49510/api/sendinblue'; //*/
 		const params = {
