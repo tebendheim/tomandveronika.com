@@ -1,6 +1,3 @@
 [[edge_functions]]
     path="/api/test"
     function="you"
-
-[functions]
-  directory = "functions"
