@@ -1,3 +1,7 @@
 [[edge_functions]]
     path="/api/test"
     function="you"
+
+[build]
+    command = "npm install && npm run build"
+    functions = "netlify/functions"
