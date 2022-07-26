@@ -1,2 +1,2 @@
-
+/api/*  http://api.tomandveronika.com/api/:splat  200
 /*  /index.html  200

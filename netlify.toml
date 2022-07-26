@@ -1,7 +1,15 @@
 [[edge_functions]]
-    path="/api/test"
+    path="/test/ap"
     function="you"
 
 [build]
-    command = "npm install && npm run build"
-    functions = "netlify/functions"
+  command = "npm install && npm run build"
+  functions = "functions"
+
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+      Access-Control-Allow-Origin = "*"
+      status = "200"

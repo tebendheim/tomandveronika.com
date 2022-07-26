@@ -92,7 +92,7 @@ class Contact extends React.Component {
 						<div>
 							<p>
 								{
-									'Contact form is sent. Please check your email for confirmation.'
+									'Sign up sucsessfull. Go to loginpage to sign in.'
 								}
 							</p>
 							<fieldset className={Style.fieldset}>

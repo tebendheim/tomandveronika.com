@@ -4,21 +4,33 @@ import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
 require('dotenv').config();
 
+const inState = {
+	firstName: '',
+	lastName: '',
+	email: '',
+	password: '',
+	confirmPass: '',
+	result: '',
+	resultMess: '',
+};
+
 class Signup extends React.Component {
 	constructor(props) {
 		super(props);
 		this.reRef = React.createRef(null);
 		this.state = {
-			firstName: '',
-			lastName: '',
-			email: '',
-			password: '',
-			confirmPass: '',
-			result: '',
+			...inState,
 		};
 
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleNewForm = this.handleNewForm.bind(this);
+	}
+	handleNewForm(event) {
+		event.preventDefault();
+		this.setState({
+			...inState,
+		});
 	}
 
 	handleChange(event) {
@@ -27,6 +39,7 @@ class Signup extends React.Component {
 			[event.target.name]: event.target.value,
 		});
 	}
+
 	//mangler en handlesubmit.
 	async handleSubmit(event) {
 		event.preventDefault();
@@ -43,20 +56,20 @@ class Signup extends React.Component {
 		this.reRef.current.reset();
 		const params = {
 			headers: {
-				'content-type': 'text/plain',
-				'Access-Control-Allow-Origin': 'vercel.app',
+				'content-type': 'application/JSON',
+				'Access-Control-Allow-Origin': '*',
 			},
 			data: {
 				firstName: this.state.firstName,
 				lastName: this.state.lastName,
 				email: this.state.email,
 				password: this.state.password,
-				confirmPass: this.state.confirmPass,
+				confirmationPass: this.state.confirmPass,
 				token: captchaToken,
 			},
 		};
-		const url =
-			'https://main--creative-daffodil-4335b5.netlify.app/api/register';
+		const testurl = 'http://localhost:50622/api/register';
+		const url = 'https://api.tomandveronika.com/api/register';
 		return await axios
 			.post(url, params)
 			.then((res) => {
@@ -73,9 +86,11 @@ class Signup extends React.Component {
 				}
 			})
 			.catch((err) => {
-				console.log(err);
+				console.log(err.status);
+				console.log(err.response);
 				this.setState({
 					result: 'error',
+					resultMess: err.response.data,
 				});
 			});
 	}
@@ -83,79 +98,104 @@ class Signup extends React.Component {
 		return (
 			<section className={`section ${Style.sectionC}`} id='contact'>
 				<h1 className={`header ${Style.headliner}`}>Sign up</h1>
-				<form className={Style.form} onSubmit={this.handleSubmit}>
-					<ReCAPTCHA
-						sitekey={process.env.REACT_APP_REC_SITE_KEY}
-						size='invisible'
-						ref={this.reRef}
-					/>
-					<fieldset className={`${Style.fieldset} ${Style.fieldsetone}`}>
-						<label className={Style.label}>
-							First Name:
-							<input
-								className={`${Style.input} ${Style.firstName}`}
-								type='text'
-								value={this.state.firstName}
-								name='firstName'
-								onChange={this.handleChange}
-								ref={(ref) => (this.input = ref)}
-							/>
-						</label>
-						<label className={Style.label}>
-							Last Name:
-							<input
-								className={`${Style.input} ${Style.lastName}`}
-								type='text'
-								value={this.state.lastName}
-								name='lastName'
-								onChange={this.handleChange}
-								ref={(ref) => (this.input = ref)}
-							/>
-						</label>
-						<label className={Style.label}>
-							E-mail:
-							<input
-								className={`${Style.input} ${Style.email}`}
-								type='email'
-								value={this.state.email}
-								name='email'
-								onChange={this.handleChange}
-								ref={(ref) => (this.input = ref)}
-							/>
-						</label>
-						<label className={Style.label}>
-							Password:
-							<input
-								className={`${Style.input} ${Style.password}`}
-								type='password'
-								value={this.state.password}
-								name='password'
-								onChange={this.handleChange}
-								ref={(ref) => (this.input = ref)}
-							/>
-						</label>
-						<label className={Style.label}>
-							Confirm password:
-							<input
-								className={`${Style.input} ${Style.password}`}
-								type='password'
-								value={this.state.confirmPass}
-								name='confirmPass'
-								onChange={this.handleChange}
-								ref={(ref) => (this.input = ref)}
-							/>
-						</label>
-					</fieldset>
-					<fieldset className={`${Style.fieldset} ${Style.submitfield}`}>
-						<label className={`${Style.label} ${Style.submitLabel}`}>
-							<input
-								className={`${Style.input} ${Style.submit}`}
-								type='submit'
-								value='Sign up'
-							/>
-						</label>
-					</fieldset>
-				</form>
+				{this.state.result === 'success' ? (
+					<div>
+						<p>
+							{
+								'If email exists, an email with a resetlink will be sendt to you shortly.'
+							}
+						</p>
+						<fieldset className={Style.fieldset}>
+							<p>Add another form?</p>
+							<button onClick={(event) => (window.location.href = '/login')}>
+								Login
+							</button>
+						</fieldset>
+					</div>
+				) : this.state.result === 'error' ? (
+					<div>
+						<p>An error occured. Please refresh your browser and try again</p>
+						<p>Error:{this.state.resultMess}</p>
+						<fieldset className={Style.fieldset}>
+							<p>Add another form?</p>
+							<button onClick={this.handleNewForm}>Try again</button>
+						</fieldset>
+					</div>
+				) : (
+					<form className={Style.form} onSubmit={this.handleSubmit}>
+						<ReCAPTCHA
+							sitekey={process.env.REACT_APP_REC_SITE_KEY}
+							size='invisible'
+							ref={this.reRef}
+						/>
+						<fieldset className={`${Style.fieldset} ${Style.fieldsetone}`}>
+							<label className={Style.label}>
+								First Name:
+								<input
+									className={`${Style.input} ${Style.firstName}`}
+									type='text'
+									value={this.state.firstName}
+									name='firstName'
+									onChange={this.handleChange}
+									ref={(ref) => (this.input = ref)}
+								/>
+							</label>
+							<label className={Style.label}>
+								Last Name:
+								<input
+									className={`${Style.input} ${Style.lastName}`}
+									type='text'
+									value={this.state.lastName}
+									name='lastName'
+									onChange={this.handleChange}
+									ref={(ref) => (this.input = ref)}
+								/>
+							</label>
+							<label className={Style.label}>
+								E-mail:
+								<input
+									className={`${Style.input} ${Style.email}`}
+									type='email'
+									value={this.state.email}
+									name='email'
+									onChange={this.handleChange}
+									ref={(ref) => (this.input = ref)}
+								/>
+							</label>
+							<label className={Style.label}>
+								Password:
+								<input
+									className={`${Style.input} ${Style.password}`}
+									type='password'
+									value={this.state.password}
+									name='password'
+									onChange={this.handleChange}
+									ref={(ref) => (this.input = ref)}
+								/>
+							</label>
+							<label className={Style.label}>
+								Confirm password:
+								<input
+									className={`${Style.input} ${Style.password}`}
+									type='password'
+									value={this.state.confirmPass}
+									name='confirmPass'
+									onChange={this.handleChange}
+									ref={(ref) => (this.input = ref)}
+								/>
+							</label>
+						</fieldset>
+						<fieldset className={`${Style.fieldset} ${Style.submitfield}`}>
+							<label className={`${Style.label} ${Style.submitLabel}`}>
+								<input
+									className={`${Style.input} ${Style.submit}`}
+									type='submit'
+									value='Sign up'
+								/>
+							</label>
+						</fieldset>
+					</form>
+				)}
 			</section>
 		);
 	}

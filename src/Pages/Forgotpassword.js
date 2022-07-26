@@ -21,8 +21,9 @@ function Forgotpassword(props) {
 		setState({ ...state, [event.target.name]: event.target.value });
 		const captchaToken = await reRef.current.executeAsync();
 		reRef.current.reset();
+		//const testurl = 'https://localhost:8888/api/forgotpassword';
+		const testurl = 'http://localhost:59912/api/forgotpassword';
 		const url = 'https://api.tomandveronika.com/api/forgotpassword';
-		const testurl = '/api/forgotpassword';
 		const params = {
 			headers: {
 				'content-type': 'application/JSON',
