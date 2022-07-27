@@ -115,7 +115,6 @@ class Signup extends React.Component {
 				) : this.state.result === 'error' ? (
 					<div>
 						<p>An error occured. Please refresh your browser and try again</p>
-						<p>Error:{this.state.resultMess}</p>
 						<fieldset className={Style.fieldset}>
 							<p>Add another form?</p>
 							<button onClick={this.handleNewForm}>Try again</button>

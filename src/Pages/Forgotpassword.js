@@ -21,8 +21,8 @@ function Forgotpassword(props) {
 		setState({ ...state, [event.target.name]: event.target.value });
 		const captchaToken = await reRef.current.executeAsync();
 		reRef.current.reset();
-		//const testurl = 'https://localhost:8888/api/forgotpassword';
-		const testurl = 'http://localhost:59912/api/forgotpassword';
+		const testurl = 'http://localhost:8888/api/forgotpassword';
+		//const testurl = 'http://localhost:59912/api/forgotpassword';
 		const url = 'https://api.tomandveronika.com/api/forgotpassword';
 		const params = {
 			headers: {
@@ -36,18 +36,15 @@ function Forgotpassword(props) {
 		};
 		try {
 			const res = await axios.post(url, params);
-			console.log(res.status);
-			console.log(res.data);
 			console.log(res);
 			if (res.status === 200) {
 				setState({ ...state, result: 'success' });
 				return res.status;
 			} else {
-				setState({ ...state, result: 'error' });
+				setState({ ...state, result: 'success' });
 				return res.status;
 			}
 		} catch (err) {
-			console.log(err);
 			setState({ ...state, result: 'error' });
 		}
 
