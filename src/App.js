@@ -10,7 +10,19 @@ import Login from './Pages/Login';
 import Signup from './Pages/Signup';
 import Forgotpassword from './Pages/Forgotpassword';
 import Reset from './Pages/Reset';
+import AdminBoard from './Pages/Protected/AdminBoard';
+import Profile from './Pages/Protected/Profile';
+import {
+	ProtectedAdmin,
+	ProtectedModerator,
+	ProtectedUser,
+	Protected,
+} from './services/Protected';
 import { NoPage } from './Pages/NoPage';
+import { history } from './helpers/history';
+import { Provider } from 'react-redux';
+
+import store from './redux/store';
 
 function App() {
 	return (
@@ -25,12 +37,37 @@ function App() {
 					<Route path='blog' element={<NoPage />} />
 					<Route path='editblog' element={<NoPage />} />
 					<Route path='services' element={<NoPage />} />
-					<Route path='signup' element={<Signup />} />
+
+					<Route
+						path='signup'
+						element={
+							<ProtectedAdmin>
+								<Signup />
+							</ProtectedAdmin>
+						}
+					/>
+
 					<Route path='*' element={<NoPage />} />
 					<Route path='forgotpassword'>
 						<Route index element={<Forgotpassword />} />
 						<Route path='reset/:token' element={<Reset />} />
 					</Route>
+					<Route
+						path='/adminboard'
+						element={
+							<ProtectedAdmin>
+								<AdminBoard />
+							</ProtectedAdmin>
+						}
+					/>
+					<Route
+						path='/profile'
+						element={
+							<Protected>
+								<Profile />
+							</Protected>
+						}
+					/>
 				</Route>
 			</Routes>
 		</BrowserRouter>

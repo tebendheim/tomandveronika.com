@@ -35,7 +35,7 @@ function Forgotpassword(props) {
 			},
 		};
 		try {
-			const res = await axios.post(url, params);
+			const res = await axios.post(testurl, params);
 			console.log(res);
 			if (res.status === 200) {
 				setState({ ...state, result: 'success' });

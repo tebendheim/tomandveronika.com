@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import logo from './Pictures/Logo_Ideer(white).png';
 import style from './CSS/Navbar.module.css';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+	const state = useSelector((state) => state.auth);
 	const [click, setClick] = useState(false);
 	const handleClick = () => {
 		setClick(!click);
@@ -50,6 +52,13 @@ const Navbar = () => {
 				</a>
 			</div>
 			<ul className={click ? style.menuObjectsActive : style.menuObjects}>
+				{state.isLoggedIn && (
+					<li className={style.navElement}>
+						<a onClick={falseClick} className={style.atag} href='/profile'>
+							Profile
+						</a>
+					</li>
+				)}
 				<li className={style.navElement}>
 					<a onClick={falseClick} className={style.atag} href='/'>
 						Home

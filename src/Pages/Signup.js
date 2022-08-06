@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Style from '../Components/CSS/Contact.module.css';
 import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { connect } from 'react-redux';
 require('dotenv').config();
 
 const inState = {
@@ -68,7 +69,7 @@ class Signup extends React.Component {
 				token: captchaToken,
 			},
 		};
-		const testurl = 'http://localhost:50622/api/register';
+		const testurl = 'http://localhost:8888/api/register';
 		const url = 'https://api.tomandveronika.com/api/register';
 		return await axios
 			.post(url, params)
@@ -97,7 +98,9 @@ class Signup extends React.Component {
 	render() {
 		return (
 			<section className={`section ${Style.sectionC}`} id='contact'>
-				<h1 className={`header ${Style.headliner}`}>Sign up</h1>
+				<h1 className={`header ${Style.headliner}`}>
+					Sign up 
+				</h1>
 				{this.state.result === 'success' ? (
 					<div>
 						<p>
@@ -199,5 +202,12 @@ class Signup extends React.Component {
 		);
 	}
 }
-
-export default Signup;
+function mapStateToProps(state) {
+	const { user } = state.auth;
+	return {
+		user,
+	};
+}
+//måten jeg nå kan ha tilgang til redux state er ved dette: {[this.props.user.Roles]}.
+//hadde jeg i mapstatetoprops funsksjonen skrecet return state, så hadde det blitt hetende det.
+export default connect(mapStateToProps)(Signup);
