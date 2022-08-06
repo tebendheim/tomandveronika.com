@@ -14,11 +14,11 @@ class AuthService {
 				token: captchaToken,
 			},
 		};
-		return await axios.post(testURL, params).then((response) => {
+		return await axios.post(API_URL, params).then((response) => {
 			if (response.data.accessToken) {
 				localStorage.setItem('user', JSON.stringify(response.data));
 			}
-            
+
 			console.log(localStorage);
 			return response.data;
 		});
