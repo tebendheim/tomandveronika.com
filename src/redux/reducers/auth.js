@@ -4,9 +4,7 @@ import {
 	LOGIN_SUCCESS,
 	LOGIN_FAIL,
 	LOGOUT,
-	SET_ADMIN,
-	SET_MODERATOR,
-	SET_USER,
+
 } from '../actions/types';
 const user = JSON.parse(localStorage.getItem('user'));
 const initialState = user

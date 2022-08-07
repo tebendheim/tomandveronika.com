@@ -1,25 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Style from '../Components/CSS/Contact.module.css';
-import axios from 'axios';
 import ReCAPTCHA from 'react-google-recaptcha';
-import AuthService from '../services/auth.service';
-
-import Form from 'react-validation/build/form';
-import Input from 'react-validation/build/input';
-import CheckButton from 'react-validation/build/button';
 
 import { connect } from 'react-redux';
-import { login, logout } from '../redux/actions/auth';
-
-const required = (value) => {
-	if (!value) {
-		return (
-			<div className='alert alert-danger' role='alert'>
-				This field is required!
-			</div>
-		);
-	}
-};
+import { login } from '../redux/actions/auth';
 
 class Login extends React.Component {
 	constructor(props) {
@@ -49,81 +33,10 @@ class Login extends React.Component {
 			[event.target.name]: event.target.value,
 			loading: true,
 		});
-
-		if (!this.state.password === this.state.confirmPass) {
-			this.setState({
-				result: 'matchError',
-			});
-			return;
-		}
 		const captchaToken = await this.reRef.current.executeAsync();
 		this.reRef.current.reset();
-
-		//Herfra og videre er hentet fra nett
-		//this.form.validateAll();
 		const { dispatch, history } = this.props;
-		//if (this.checkBtn.context._errors.length === 0) {
-		/*const data = await AuthService.login(
-			this.state.email,
-			this.state.password,
-			captchaToken
-		);*/
 		dispatch(login(this.state.email, this.state.password, captchaToken));
-		/*
-			.then(() => {
-				history.push('/');
-				window.location.reload();
-			})
-			.catch(() => {
-				this.setState({
-					loading: false,
-				});
-			});*/
-		//} else {
-		//	this.setState({
-		//		loading: false,
-		//	});
-
-		/*
-		const params = {
-			headers: {
-				'content-type': 'application/JSON',
-				'Access-Control-Allow-Origin': '*',
-			},
-			data: {
-				email: this.state.email,
-				password: this.state.password,
-				token: captchaToken,
-			},
-		};
-		const testurl = 'http://localhost:8888/api/login';
-		const url = 'https://api.tomandveronika.com/api/login';
-		return await axios
-			.post(url, params)
-			.then((res) => {
-				console.log(res);
-				if (res.status === 200) {
-					this.setState({
-						result: 'success',
-					});
-					return res.status;
-				} else {
-					this.setState({
-						result: 'error',
-					});
-					return res.status;
-				}
-				console.log();
-			})
-			.catch((err) => {
-				console.log(err.status);
-				console.log(err.response);
-				this.setState({
-					result: 'error',
-					resultMess: err.response.data,
-				});
-			});
-			*/
 	}
 
 	render() {
