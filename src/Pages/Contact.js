@@ -2,6 +2,9 @@ import axios from 'axios';
 import React from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Style from '../Components/CSS/Contact.module.css';
+
+import Tracker from '../services/tracker';
+
 require('dotenv').config();
 
 class Contact extends React.Component {
@@ -81,6 +84,7 @@ class Contact extends React.Component {
 	render() {
 		return (
 			<section className={`section ${Style.sectionC}`} id='contact'>
+				<Tracker  />
 				<h1 className={`header ${Style.headliner}`}>Contact us</h1>
 				<form className={Style.form} onSubmit={this.handleSubmit}>
 					<ReCAPTCHA
@@ -90,11 +94,7 @@ class Contact extends React.Component {
 					/>
 					{this.state.result === 'success' ? (
 						<div>
-							<p>
-								{
-									'Sign up sucsessfull. Go to loginpage to sign in.'
-								}
-							</p>
+							<p>{'Sign up sucsessfull. Go to loginpage to sign in.'}</p>
 							<fieldset className={Style.fieldset}>
 								<p>Add another form?</p>
 								<button onClick={this.handleNewForm}>New Form</button>

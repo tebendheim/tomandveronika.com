@@ -42,7 +42,6 @@ const Navbar = () => {
 	const dispatch = useDispatch();
 	const handleLogout = (event) => {
 		event.preventDefault();
-		console.log('er inne');
 		dispatch(logout());
 	};
 

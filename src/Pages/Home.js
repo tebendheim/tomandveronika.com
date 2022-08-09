@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from '../Components/CSS/Home.module.css';
 import logo from '../Components/Pictures/Logo_Ideer2.png';
+import Tracker from '../services/tracker';
+
 class Home extends React.Component {
 	constructor(props) {
 		super(props);
@@ -16,6 +18,7 @@ class Home extends React.Component {
 				id={'home'}
 				aria-labelledby={'home'}
 			>
+				<Tracker />
 				<div className={styles.wrapper}>
 					<div className={styles.logoWrapper}>
 						<img

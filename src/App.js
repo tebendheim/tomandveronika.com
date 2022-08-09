@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Layout from './Components/Layout';
@@ -25,6 +26,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 function App() {
+
 	return (
 		<BrowserRouter>
 			<Routes>

@@ -7,6 +7,7 @@ import {
 	SET_MESSAGE,
 } from './types';
 import AuthService from '../../services/auth.service';
+import store from '../store';
 
 export const register = (username, email, password) => (dispatch) => {
 	return AuthService.register(username, email, password).then(
@@ -39,34 +40,40 @@ export const register = (username, email, password) => (dispatch) => {
 	);
 };
 export const login = (email, password, captchaToken) => (dispatch) => {
-	AuthService.login(email, password, captchaToken)
-		.then((res) => {
-			dispatch({
-				type: LOGIN_SUCCESS,
-				payload: { user: res },
-			});
-			const message = 'Login success';
-			dispatch({
-				type: SET_MESSAGE,
-				payload: message,
-			});
+	const items = store.getState().auth;
+	if (!items.isLoggedIn) {
+		AuthService.login(email, password, captchaToken)
+			.then((res) => {
+				dispatch({
+					type: LOGIN_SUCCESS,
+					payload: { user: res },
+				});
+				const message = 'Login success';
+				dispatch({
+					type: SET_MESSAGE,
+					payload: message,
+				});
 
-			return Promise.resolve();
-		})
-		.catch((err) => {
-			const message =
-				(err.response && err.response.data && err.response.data.message) ||
-				err.message ||
-				err.toString();
-			dispatch({
-				type: LOGIN_FAIL,
+				return Promise.resolve();
+			})
+			.catch((err) => {
+				const message =
+					(err.response && err.response.data && err.response.data.message) ||
+					err.message ||
+					err.toString();
+				dispatch({
+					type: LOGIN_FAIL,
+				});
+				dispatch({
+					type: SET_MESSAGE,
+					payload: message,
+				});
+
+				return Promise.reject();
 			});
-			dispatch({
-				type: SET_MESSAGE,
-				payload: message,
-			});
-			return Promise.reject();
-		});
+	} else {
+		return;
+	}
 };
 
 export const logout = () => (dispatch) => {
