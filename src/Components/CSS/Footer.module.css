@@ -2,4 +2,23 @@
 	background-color: #171511;
 	margin-top: 20px;
 	bottom: 100;
+	display: flex;
+	align-items:center;
+	justify-content: space-between;
 }
+.menuObjects{
+	display: flex;
+	flex-direction:row;
+	justify-content: space-between;
+	width: 100%
+
+	
+}
+.navElement{
+	display:flex;
+	margin: auto auto auto auto;
+}
+.atag{
+	color:#ffff;
+}
+
