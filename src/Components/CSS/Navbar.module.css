@@ -159,9 +159,8 @@
 	background-color: transparent;
 	border: 0;
 }
-@media (max-width: 650px) {
-	.atag {
-	}
+@media (max-width: 800px) {
+
 	.menuObjects {
 		background-color: transparent;
 		border: 0;

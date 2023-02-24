@@ -21,8 +21,12 @@
 	padding: 0;
 	margin: -1px;
 }
-.videos_section {
+
+.spinnerHeader{
+	min-height: 100vh;
 }
+
+
 .grid {
 	display: flex;
 	align-items: center;

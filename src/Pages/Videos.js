@@ -74,7 +74,7 @@ class Videos extends React.Component {
 		return (
 			<section className={`section ${styles.videos_section}`} id='videos'>
 				<h1 className={`header ${styles.headers}`}>Videos</h1>
-				<h3>{this.state.isLoading && <Spinner />}</h3>
+				{this.state.isLoading ? <h3 className={styles.spinnerHeader}>{<Spinner className={styles.mainSpinner}/>}</h3>: 
 				<ul className={styles.grid}>
 					{this.state.Data &&
 						this.state.Data.items.map((item, index) => {
@@ -84,7 +84,8 @@ class Videos extends React.Component {
 							return (
 								<li key={item.id} className={styles.card}>
 									{this.state.isLoading && (
-										<Spinner className={styles.spinner} />
+										<div className={styles.spinnerDiv}><Spinner className={styles.spinner} /></div>
+										
 									)}
 
 									<iframe
@@ -104,6 +105,7 @@ class Videos extends React.Component {
 							);
 						})}
 				</ul>
+	}
 			</section>
 		);
 	}
