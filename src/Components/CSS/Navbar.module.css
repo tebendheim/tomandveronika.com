@@ -247,9 +247,10 @@
 		display: block;
 	}
 }
-@media (max-width: 400px) {
+@media (max-width: 600px) {
 	.menuObjectsActive {
 		width: 100%;
 		left: 0%;
+		top: 65px;
 	}
 }

@@ -17,17 +17,17 @@ const Footer = () => {
 			<ul className={style.menuObjects}>
 				<li className={style.navElement}>
 					<a onClick={falseClick} className={style.atag} href='https://www.facebook.com/Tom-Elbin-Bendheim-493293257858119'>
-						<i class="fa fa-facebook-square" aria-hidden="true"></i>
+						<i className="fa fa-facebook-square" aria-hidden="true"></i>
 					</a>
 				</li>
 				<li className={style.navElement}>
 					<a onClick={falseClick} className={style.atag} href='/contact'>
-						<i class="fa fa-envelope" aria-hidden="true"></i>
+						<i className="fa fa-envelope" aria-hidden="true"></i>
 					</a>
 				</li>
 				<li className={style.navElement}>
 					<a onClick={falseClick} className={style.atag} href='https://www.instagram.com/veronikalangmo'>
-						<i class="fa fa-instagram" aria-hidden="true"></i>
+						<i className="fa fa-instagram" aria-hidden="true"></i>
 					</a>
 				</li>
 			</ul>
