@@ -4,7 +4,8 @@
 
 ---
 
-**Tom-Elbin** begynte å danse på en av Veronikas klasser i 2015. Han hadde allerede prøvd ut noen andre dansestiler, som Bachata og Lindy Hop, men når han prøvde West Coast Swing, ble han virkelig hekta. Tom-Elbin har en bachelorgrad i trenging og prestasjon fra Norges Idrettshøyskole. Han har gjennom dette en solid forståelse av kroppen og dens biomekanikk og funksjon. Dette tar de med seg inn i timene sine for å skape forståelse for hvordan dansen fungerer. Tom-Elbin konkurrerer i dag i All-star divisjonen.
+**Tom-Elbin** started his West Coast Swing journey at one of Veronika’s classes in 2015. He already had some experience from other dances, like bachata and Lindy hop, but when he started with WCS, it seemed like a whole new world had opened up for him. Tom-Elbin has a bachelors degree in training and performance from Norwegian School of Sport Science. Through this he has a solid understanding of the human body, its biomechanics and its functions.
+Tom-Elbin competes in the All-star division.
 
 ## Veronika Langmo
 
@@ -12,10 +13,8 @@
 
 ---
 
-**Veronika** begynte å danse West Coast Swing i en alder av 15 år, og ble helt forelsket i dansestilen fra første stund. Selv om hun aldri hadde danset før, vokste hennes lidenskap for dans raskt, og hun begynte å undervise allerede i 2014. Veronika konkurrerer i dag i Advanced divisjonen, hvor hun har flere topplasseringer å vise til.
+**Veronika** started to dance West Coast Swing when she was fifteen years old. She completely fell in love with the dance style from the very fist movement, and even though she had never danced before, her passion for dancing grew fast. She started teaching already in 2014. Today Veronika competes in the Advanced division, where she has several top placements to show to.
 
 ---
 
-**Tom-Elbin og Veronika** underviser ukentlig på Bårdar Dance Academy i Oslo og er nesten alltid å se på ulike WCS-arrangementer.
-
-## Engelsk
+**Tom-Elbin og Veronika** has been teaching together since 2016. They teach weekly classes at Bårdar dance academy in Oslo, where they continue to spread their love for the dance community and the dance itself.

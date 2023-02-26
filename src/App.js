@@ -6,6 +6,7 @@ import Layout from './Components/Layout';
 import About from './Pages/About';
 import Home from './Pages/Home';
 import Contact from './Pages/Contact';
+import Kontakt from './Pages/Kontakt'
 import Videos from './Pages/Videos';
 import Login from './Pages/Login';
 import Signup from './Pages/Signup';
@@ -25,11 +26,12 @@ import { Provider } from 'react-redux';
 
 import store from './redux/store';
 //import LangProvider from './Components/LangProvider';
-import LangProvider from './Components/LangProvider'
+import {LangContext} from './Components/LangProvider'
 
 
 
 function App() {
+	const {erNorsk} = useContext(LangContext)
 
 
 	//const [language, togglelang] = useContext(LangContext)
@@ -37,13 +39,13 @@ function App() {
 	//useEffect(() => {console.log(language)})
 
 	return (
-		<LangProvider>
+		
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Layout />}>
 					<Route index element={<Home />} />
 					<Route path='about' element={<About />} />
-					<Route path='contact' element={<Contact />} />
+					<Route path='contact' element={erNorsk ? <Kontakt /> : <Contact />} />
 					<Route path='Videos' element={<Videos />} />
 					<Route path='login' element={<Login />} />
 					<Route path='blog' element={<NoPage />} />
@@ -83,7 +85,6 @@ function App() {
 				</Route>
 			</Routes>
 		</BrowserRouter>
-		</LangProvider>
 	);
 }
 

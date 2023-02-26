@@ -17,5 +17,3 @@
 ---
 
 **Tom-Elbin og Veronika** underviser ukentlig på Bårdar Dance Academy i Oslo og er nesten alltid å se på ulike WCS-arrangementer.
-
-## Norsk

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import logo from './Pictures/Logo_Ideer(white).png';
 import style from './CSS/Navbar.module.css';
 import { useSelector } from 'react-redux';
@@ -6,9 +6,12 @@ import userService from '../services/user.service';
 import { logout } from '../redux/actions/auth';
 import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom'
+import {LangContext} from './LangProvider'
+
 
 const Navbar = () => {
 	const state = useSelector((state) => state.auth);
+	const {erNorsk} = useContext(LangContext)
 	const [click, setClick] = useState(false);
 	const [profile, setProfile] = useState(false);
 	const handleClick = () => {
@@ -74,7 +77,8 @@ const Navbar = () => {
 						<ul className={style.profileObjects}>
 							<li className={style.navElementProfile}>
 								<Link onClick={falseClick} className={style.atagProfile} to='/'>
-									Home
+									{erNorsk ? "Hjem":"Home"}
+								
 								</Link>
 							</li>
 							<li className={style.navElementProfile}>
@@ -83,7 +87,7 @@ const Navbar = () => {
 									className={style.atagProfile}
 									to='/about'
 								>
-									About
+									{erNorsk ? "Om Oss":"About"}
 								</Link>
 							</li>
 							<li className={style.navElementProfile}>
@@ -92,7 +96,7 @@ const Navbar = () => {
 									className={style.atagProfile}
 									to='/videos'
 								>
-									Videos
+									{erNorsk ? "Videoer":"Videos"}
 								</Link>
 							</li>
 							<li className={style.navElementProfile}>
@@ -101,7 +105,7 @@ const Navbar = () => {
 									className={style.atagProfile}
 									to='/contact'
 								>
-									Contact
+									{erNorsk ? "Kontakt":"Contact"}
 								</Link>
 							</li>
 							{userService.checkAdmin() && (
@@ -131,22 +135,22 @@ const Navbar = () => {
 				<ul className={click ? style.menuObjectsActive : style.menuObjects}>
 					<li className={style.navElement}>
 						<Link onClick={falseClick} className={style.atag} to='/'>
-							Home
+						{erNorsk ? "Hjem":"Home"}
 						</Link>
 					</li>
 					<li className={style.navElement}>
 						<Link onClick={falseClick} className={style.atag} to='/about'>
-							About
+						{erNorsk ? "Om Oss":"About"}
 						</Link>
 					</li>
 					<li className={style.navElement}>
 						<Link onClick={falseClick} className={style.atag} to='/videos'>
-							Videos
+						{erNorsk ? "Videoer":"Videos"}
 						</Link>
 					</li>
 					<li className={style.navElement}>
 						<Link onClick={falseClick} className={style.atag} to='/contact'>
-							Contact
+						{erNorsk ? "Kontakt":"Contact"}
 						</Link>
 					</li>
 				</ul>
