@@ -10,15 +10,18 @@
 	display: flex;
 	flex-direction:row;
 	justify-content: space-between;
-	width: 100%
+	width: 100%;
+	list-style-type: none;
 
 	
 }
 .navElement{
 	display:flex;
 	margin: auto auto auto auto;
+	
 }
 .atag{
 	color:#ffff;
+	
 }
 

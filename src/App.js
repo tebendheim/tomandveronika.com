@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import axios from 'axios';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -24,10 +24,20 @@ import { history } from './helpers/history';
 import { Provider } from 'react-redux';
 
 import store from './redux/store';
+//import LangProvider from './Components/LangProvider';
+import LangProvider from './Components/LangProvider'
+
+
 
 function App() {
 
+
+	//const [language, togglelang] = useContext(LangContext)
+
+	//useEffect(() => {console.log(language)})
+
 	return (
+		<LangProvider>
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Layout />}>
@@ -73,7 +83,9 @@ function App() {
 				</Route>
 			</Routes>
 		</BrowserRouter>
+		</LangProvider>
 	);
 }
 
 export default App;
+

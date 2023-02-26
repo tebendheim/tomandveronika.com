@@ -1,7 +1,8 @@
 import axios from 'axios';
-import React from 'react';
+import React, {useContext} from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Style from '../Components/CSS/Contact.module.css';
+
 
 import Tracker from '../services/tracker';
 
@@ -21,12 +22,14 @@ class Contact extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleNewForm = this.handleNewForm.bind(this);
+
 	}
 	handleNewForm(event) {
 		this.setState({
 			result: '',
 		});
 	}
+	
 
 	async handleSubmit(event) {
 		event.preventDefault();
