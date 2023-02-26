@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import userService from '../services/user.service';
 import { logout } from '../redux/actions/auth';
 import { useDispatch } from 'react-redux';
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
 	const state = useSelector((state) => state.auth);
@@ -51,9 +52,9 @@ const Navbar = () => {
 			id='home'
 		>
 			<div className={style.wrapLogo}>
-				<a href='/'>
+				<Link to='/'>
 					<img className={style.logo} src={logo} alt='logo' id='logo'></img>
-				</a>
+				</Link>
 			</div>
 			{state.isLoggedIn ? (
 				<div className={style.profileWrapper}>
@@ -72,46 +73,46 @@ const Navbar = () => {
 					{profile && (
 						<ul className={style.profileObjects}>
 							<li className={style.navElementProfile}>
-								<a onClick={falseClick} className={style.atagProfile} href='/'>
+								<Link onClick={falseClick} className={style.atagProfile} to='/'>
 									Home
-								</a>
+								</Link>
 							</li>
 							<li className={style.navElementProfile}>
-								<a
+								<Link
 									onClick={falseClick}
 									className={style.atagProfile}
-									href='/about'
+									to='/about'
 								>
 									About
-								</a>
+								</Link>
 							</li>
 							<li className={style.navElementProfile}>
-								<a
+								<Link
 									onClick={falseClick}
 									className={style.atagProfile}
-									href='/videos'
+									to='/videos'
 								>
 									Videos
-								</a>
+								</Link>
 							</li>
 							<li className={style.navElementProfile}>
-								<a
+								<Link
 									onClick={falseClick}
 									className={style.atagProfile}
-									href='/contact'
+									to='/contact'
 								>
 									Contact
-								</a>
+								</Link>
 							</li>
 							{userService.checkAdmin() && (
 								<li className={style.navElementProfile}>
-									<a
+									<Link
 										onClick={falseClick}
 										className={style.atagProfile}
-										href='/adminBoard'
+										to='/adminBoard'
 									>
 										Admin Board
-									</a>
+									</Link>
 								</li>
 							)}
 							<li className={style.navElementProfile}>
@@ -129,24 +130,24 @@ const Navbar = () => {
 			) : (
 				<ul className={click ? style.menuObjectsActive : style.menuObjects}>
 					<li className={style.navElement}>
-						<a onClick={falseClick} className={style.atag} href='/'>
+						<Link onClick={falseClick} className={style.atag} to='/'>
 							Home
-						</a>
+						</Link>
 					</li>
 					<li className={style.navElement}>
-						<a onClick={falseClick} className={style.atag} href='/about'>
+						<Link onClick={falseClick} className={style.atag} to='/about'>
 							About
-						</a>
+						</Link>
 					</li>
 					<li className={style.navElement}>
-						<a onClick={falseClick} className={style.atag} href='/videos'>
+						<Link onClick={falseClick} className={style.atag} to='/videos'>
 							Videos
-						</a>
+						</Link>
 					</li>
 					<li className={style.navElement}>
-						<a onClick={falseClick} className={style.atag} href='/contact'>
+						<Link onClick={falseClick} className={style.atag} to='/contact'>
 							Contact
-						</a>
+						</Link>
 					</li>
 				</ul>
 			)}
