@@ -1,0 +1,50 @@
+/* PrivacyText.module.css */
+.c {
+    display: flex;
+    flex-direction:column;
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
+.c h1{
+    font-size: 44px;
+    background-color: white;
+    font-weight: bolder;
+  }
+  .c h2 {
+    margin:30px 0px 10px 0px;
+    font-weight: bold;
+  }
+  .c h3{
+
+  }
+  .c h4{
+
+  }
+  .c h5{
+    margin: 10px 0;
+    font-style: italic;
+  }
+  .c h6{
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .c * p{
+    margin:20px 0px 20px 0px;
+  }
+
+  .c li {
+    list-style-type: disc;
+    margin-bottom: 10px;
+    margin-left:50px;
+  }
+
+  .c ul{
+    margin-bottom: 40px;
+    margin-top:10px;
+  }
+
+  .c a{
+    color:blue;
+  }
