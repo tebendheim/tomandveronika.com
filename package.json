@@ -43,6 +43,7 @@
 		"shell-quote": ">=1.7.3",
 		"tailwind": "^4.0.0",
 		"terser": ">=4.8.1",
+		"typescript": "^5.4.5",
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
